@@ -46,6 +46,18 @@ public class ChangeStack {
         return topNode.nodeData;
     }
 
+    public void peekAllNodes() throws CustomException {
+        // made this to see the whole stack so i can make sure the increase and decrease values are working as intended
+        if (topNode == null){
+            throw new CustomException("Stack is empty.");
+        }
+        Node currentNode = topNode;
+        while (currentNode != null){
+            System.out.println("Node: "+ currentNode.nodeData);
+            currentNode = currentNode.nextNode;
+        }
+    }
+
     public void increaseValues(int k, int amount){
         // if stack is empty do nothing
         if (topNode == null){
@@ -68,9 +80,12 @@ public class ChangeStack {
             int startingPoint = numElements - k;
             // make sure we don't go past the end of the stack
             while (currentNode != null){
+//                System.out.println("Indexes: " + index + " " + currentNode.nodeData);
                 // starting at the top, only get nodes that have a higher index than the starting point
                 if(index >= startingPoint) {
+//                    System.out.println("Changing element amounts");
                     currentNode.nodeData += amount;
+//                    System.out.println("Current node data: " + currentNode.nodeData);
                 }
                 // move to next node
                 currentNode = currentNode.nextNode;

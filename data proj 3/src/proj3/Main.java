@@ -11,6 +11,9 @@ public class Main {
         stack.push(50);
         stack.push(60);
 
+        stack.peekAllNodes();
+        System.out.println("---------------------------------------------------------------");
+
         // expected output 60
         System.out.println("Top value: " + stack.peekTop());
 
@@ -21,13 +24,15 @@ public class Main {
 
         // expected output 30
         System.out.println("Top value: " + stack.peekTop());
-
-        stack.decreaseValues(1, 3);
-        // expected output 27
-        System.out.println("Top value: " + stack.peekTop());
+        System.out.println("---------------------------------------------------------------");
 
         stack.increaseValues(2, 5);
-        // expected output 32
-        System.out.println("Top value: " + stack.peekTop());
+        // expected output 30, 25, 15
+        stack.peekAllNodes();
+        System.out.println("---------------------------------------------------------------");
+
+        stack.decreaseValues(2, 5);
+        // expected output 30, 20, 10
+        stack.peekAllNodes();
     }
 }
