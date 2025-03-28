@@ -1,5 +1,12 @@
 package proj3;
 
+// Gina Fender
+// Project 3
+// CIS 2353
+// Winter 2025
+// Winter 2025
+// Prof. John P. Baugh
+
 public class ChangeStack {
 
     Node topNode;
